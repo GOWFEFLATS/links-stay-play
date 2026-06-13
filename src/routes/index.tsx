@@ -393,7 +393,7 @@ function ExperienceFlowSection() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
                 className="relative"
               >
                 <div
@@ -596,7 +596,7 @@ function RoadmapSection() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
                 className="relative pl-0 md:pl-16"
               >
                 <div

@@ -81,12 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Gowfe Flats is a private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style golf courses." },
       { name: "author", content: "Gowfe Flats" },
       { property: "og:title", content: "Gowfe Flats × Tarandowah | Stay. Play. Escape to Pure Golf." },
-      { property: "og:description", content: "A private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style golf courses." },
+      { property: "og:description", content: "Gowfe Flats is a private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style golf courses." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://gowfeflats.ca" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Gowfe Flats × Tarandowah" },
-      { name: "twitter:description", content: "Stay. Play. Escape to Pure Golf. A private-style golf stay in Ontario links country." },
+      { name: "twitter:title", content: "Gowfe Flats × Tarandowah | Stay. Play. Escape to Pure Golf." },
+      { name: "twitter:description", content: "Gowfe Flats is a private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style golf courses." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/30e425f6-fe53-48db-833b-29eae9c72a8b" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/30e425f6-fe53-48db-833b-29eae9c72a8b" },
     ],
     links: [
       {

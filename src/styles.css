@@ -63,6 +63,8 @@
   --color-moss: var(--moss);
   --color-ink: var(--ink);
   --color-gold: var(--gold);
+  --color-heather: var(--heather);
+  --color-peat: var(--peat);
 
   --font-serif: 'Cormorant Garamond', 'Georgia', serif;
   --font-sans: 'Inter', system-ui, sans-serif;

@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Gowfe Flats × Tarandowah | Stay. Play. Escape to Pure Golf." },
-      { name: "description", content: "Gowfe Flats is a private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style golf courses." },
-      { property: "og:title", content: "Gowfe Flats × Tarandowah | Stay. Play. Escape to Pure Golf." },
-      { property: "og:description", content: "A private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style golf courses." },
+      { title: "Gowfe Flats × Tarandowah | STAY HERE, PLAY THERE" },
+      { name: "description", content: "Gowfe Flats is a private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style layouts." },
+      { property: "og:title", content: "Gowfe Flats × Tarandowah | STAY HERE, PLAY THERE" },
+      { property: "og:description", content: "A private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style layouts." },
     ],
   }),
   component: Index,
@@ -53,7 +53,7 @@ function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-background/80 backdrop-blur-md border-b border-foreground/5">
       <span className="font-serif italic text-2xl tracking-tight text-ink">Gowfe Flats</span>
       <div className="hidden md:flex gap-10 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-        <a href="#course" className="hover:text-foreground transition-colors">The Course</a>
+        <a href="#course" className="hover:text-foreground transition-colors">The Links</a>
         <a href="#experience" className="hover:text-foreground transition-colors">Experience</a>
         <a href="#booking" className="hover:text-foreground transition-colors">Book</a>
       </div>
@@ -73,7 +73,7 @@ function HeroSection() {
     <header className="relative h-[100dvh] flex flex-col justify-end overflow-hidden">
       <img
         src="/images/hero-fairway.jpg"
-        alt="Aerial view of Tarandowah golf course fairways at golden hour"
+        alt="Aerial view of Tarandowah links fairways at golden hour"
         className="absolute inset-0 w-full h-full object-cover"
         width={1920}
         height={1080}
@@ -90,8 +90,8 @@ function HeroSection() {
             variants={fadeUp}
             className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] text-balance font-medium mb-6"
           >
-            Stay. Play. Escape to{" "}
-            <span className="italic font-normal">Pure Golf.</span>
+            STAY HERE,{" "}
+            <span className="italic font-normal">PLAY THERE</span>
           </motion.h1>
 
           <motion.div
@@ -100,8 +100,8 @@ function HeroSection() {
           >
             <p className="text-lg md:text-xl text-white/80 max-w-[44ch] leading-relaxed text-pretty">
               Gowfe Flats is a private-style golf stay concept paired with
-              Tarandowah Golfers Club — one of Canada’s most authentic
-              links-style golf courses.
+              Tarandowah Golfers Club — one of Canada's most authentic
+              links-style layouts.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -146,7 +146,7 @@ function ConceptSection() {
               The Concept
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl lg:text-6xl text-balance leading-tight">
-              A Different Kind of Golf Getaway
+              A Different Kind of Links Getaway
             </motion.h2>
             <motion.p variants={fadeUp} className="text-lg md:text-xl max-w-[56ch] text-pretty leading-relaxed text-foreground/75">
               Gowfe Flats is built for golfers who want more than a tee time.
@@ -199,7 +199,7 @@ function CourseSection() {
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-4">
               <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue">
-                The Course
+                The Links
               </motion.span>
               <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-7xl leading-none">
                 Tarandowah Golfers Club
@@ -232,7 +232,7 @@ function CourseSection() {
           <motion.div variants={fadeUp} className="grid md:grid-cols-3 gap-6 mb-12">
             <img
               src="/images/course-green.jpg"
-              alt="Tarandowah golf green with complex contouring"
+              alt="Tarandowah links green with complex contouring"
               className="aspect-video object-cover rounded-lg opacity-90"
               loading="lazy"
             />
@@ -262,7 +262,7 @@ function CourseSection() {
               },
               {
                 title: "Top Ranked",
-                desc: "Consistently ranked among the top public courses in Canada for its architectural purity.",
+                desc: "Consistently ranked among the top public links in Canada for its architectural purity.",
               },
             ].map((feature) => (
               <div key={feature.title} className="p-8 border border-sand/10 rounded-lg hover:bg-white/3 transition-colors">
@@ -291,7 +291,7 @@ function CombinationSection() {
         >
           <div className="space-y-8">
             <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl leading-tight">
-              Golf + Stay Designed as One Experience
+              Links + Stay Designed as One Experience
             </motion.h2>
             <motion.p variants={fadeUp} className="max-w-[48ch] text-pretty text-foreground/65 leading-relaxed text-lg">
               Most golf trips feel disconnected — you book tee times, then
@@ -433,7 +433,7 @@ function AudienceSection() {
         >
           <div className="space-y-10">
             <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
-              Built for Serious Golf Trips
+              Built for Serious Links Trips
             </motion.h2>
             <div className="space-y-8">
               <motion.div variants={fadeUp}>
@@ -530,7 +530,7 @@ function HighlightsSection() {
           className="text-center mb-16"
         >
           <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4 block">
-            Course Highlights
+            Links Highlights
           </motion.span>
           <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
             Why Golfers Return to Tarandowah
@@ -699,7 +699,7 @@ function Footer() {
             <div className="space-y-5">
               <span className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium">Navigate</span>
               <nav className="flex flex-col gap-3 text-sm text-foreground/50">
-                <a href="#course" className="hover:text-foreground transition-colors">The Course</a>
+                <a href="#course" className="hover:text-foreground transition-colors">The Links</a>
                 <a href="#experience" className="hover:text-foreground transition-colors">The Experience</a>
                 <a href="#booking" className="hover:text-foreground transition-colors">Bookings</a>
               </nav>

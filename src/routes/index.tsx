@@ -100,8 +100,8 @@ function HeroSection() {
           >
             <p className="text-lg md:text-xl text-white/80 max-w-[44ch] leading-relaxed text-pretty">
               Gowfe Flats is a private-style golf stay concept paired with
-              Tarandowah Golfers Club — one of Canada’s most authentic
-              links-style golf courses.
+              Tarandowah Golfers Club — one of Canada's most authentic
+              links-style layouts.
             </p>
             <div className="flex flex-wrap gap-4">
               <a

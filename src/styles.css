@@ -104,12 +104,14 @@
   --sidebar-border: oklch(0.9 0.008 85);
   --sidebar-ring: oklch(0.32 0.035 145);
 
-  /* Gowfe Flats palette */
+  /* Gowfe Flats palette — Scottish links */
   --sand: #F9F7F2;
   --fescue: #C4B99A;
-  --moss: #3D4F3A;
+  --moss: #3A4A3E;
   --ink: #1A1918;
-  --gold: #D4A853;
+  --gold: #C9A44A;
+  --heather: #7B6B8D;
+  --peat: #4A3F35;
 }
 
 .dark {

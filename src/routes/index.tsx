@@ -143,7 +143,7 @@ function useCountdown(target: Date) {
 function CountdownSection() {
   // First 2027 weekend release: target May 1, 2027
   const target = new Date("2027-05-01T12:00:00Z");
-  const { days, hours, minutes, seconds } = useCountdown(target);
+  const { days, hours, minutes, seconds, ready } = useCountdown(target);
   const units = [
     { label: "Days", value: days },
     { label: "Hours", value: hours },

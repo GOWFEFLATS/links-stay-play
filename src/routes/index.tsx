@@ -126,23 +126,24 @@ function FounderNote() {
 
 /* ─── Countdown to 2027 ─── */
 function useCountdown(target: Date) {
-  const [now, setNow] = useState(() => new Date());
+  const [now, setNow] = useState<Date | null>(null);
   useEffect(() => {
+    setNow(new Date());
     const id = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(id);
   }, []);
-  const diff = Math.max(0, target.getTime() - now.getTime());
+  const diff = now ? Math.max(0, target.getTime() - now.getTime()) : 0;
   const days = Math.floor(diff / 86400000);
   const hours = Math.floor((diff / 3600000) % 24);
   const minutes = Math.floor((diff / 60000) % 60);
   const seconds = Math.floor((diff / 1000) % 60);
-  return { days, hours, minutes, seconds };
+  return { days, hours, minutes, seconds, ready: now !== null };
 }
 
 function CountdownSection() {
   // First 2027 weekend release: target May 1, 2027
   const target = new Date("2027-05-01T12:00:00Z");
-  const { days, hours, minutes, seconds } = useCountdown(target);
+  const { days, hours, minutes, seconds, ready } = useCountdown(target);
   const units = [
     { label: "Days", value: days },
     { label: "Hours", value: hours },
@@ -174,8 +175,8 @@ function CountdownSection() {
               key={u.label}
               className="border border-foreground/10 rounded-2xl py-6 px-2 bg-muted/30"
             >
-              <div className="font-serif text-4xl md:text-5xl tabular-nums">
-                {String(u.value).padStart(2, "0")}
+              <div className="font-serif text-4xl md:text-5xl tabular-nums" suppressHydrationWarning>
+                {ready ? String(u.value).padStart(2, "0") : "--"}
               </div>
               <div className="text-[10px] uppercase tracking-[0.2em] text-foreground/50 mt-2">
                 {u.label}

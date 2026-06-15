@@ -798,21 +798,21 @@ function FinalCTA() {
             Opening Summer 2027
           </motion.span>
           <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight">
-            Be Part of the <span className="italic font-normal">First Season.</span>
+            Lock In Your <span className="italic font-normal">2027 Golf Weekend.</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sand/60 max-w-xl mx-auto text-lg leading-relaxed text-pretty">
-            Limited weekends. High-demand tee times. Designed for small groups
-            only. Be part of the first season at the Flats.
+            Join the priority list and receive first access to released
+            weekends. Limited dates. Small groups only.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <a
-              href="mailto:info@gowfeflats.ca"
+              href="mailto:info@gowfeflats.ca?subject=Priority%20List%20—%202027%20Golf%20Weekend"
               className="inline-flex items-center justify-center px-10 py-5 bg-gold text-ink rounded-full text-sm font-semibold hover:bg-gold/90 transition-all active:scale-95"
             >
-              Get Early Access
+              Join Priority List
             </a>
             <a
-              href="mailto:info@gowfeflats.ca"
+              href="mailto:info@gowfeflats.ca?subject=Group%20Packages"
               className="inline-flex items-center justify-center px-10 py-5 border border-sand/20 rounded-full text-sm font-medium hover:bg-sand/10 transition-all"
             >
               Ask About Group Packages

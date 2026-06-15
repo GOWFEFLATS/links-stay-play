@@ -256,7 +256,7 @@ function HeroSection() {
                 href="#course"
                 className="inline-flex items-center px-6 py-3.5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full text-sm font-medium hover:bg-white/20 transition-all"
               >
-                View Tarandowah Course
+                View Tarandowah Golfers Club
               </a>
             </div>
           </motion.div>

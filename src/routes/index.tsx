@@ -34,6 +34,8 @@ function Index() {
     <main className="bg-background text-foreground font-sans">
       <Navigation />
       <HeroSection />
+      <PricingSection />
+      <FounderNote />
       <ConceptSection />
       <CourseSection />
       <CombinationSection />
@@ -41,9 +43,147 @@ function Index() {
       <AudienceSection />
       <HighlightsSection />
       <RoadmapSection />
+      <CountdownSection />
       <FinalCTA />
       <Footer />
     </main>
+  );
+}
+
+/* ─── Pricing (high in the page so cost is immediate) ─── */
+function PricingSection() {
+  const includes = [
+    "Luxury accommodations",
+    "Three rounds of golf",
+    "Group concierge support",
+    "Designed for 4–8 players",
+  ];
+  return (
+    <section id="pricing" className="px-6 pt-20 md:pt-28 pb-6">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={staggerContainer}
+        className="max-w-5xl mx-auto bg-ink text-sand rounded-[2rem] p-10 md:p-16 grid md:grid-cols-2 gap-10 md:gap-16 items-center"
+      >
+        <div className="space-y-4">
+          <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue block">
+            Weekend Packages Starting at
+          </motion.span>
+          <motion.div variants={fadeUp} className="flex items-baseline gap-3">
+            <span className="font-serif text-6xl md:text-7xl leading-none">$499</span>
+            <span className="text-sm text-sand/60 uppercase tracking-widest">per golfer</span>
+          </motion.div>
+          <motion.p variants={fadeUp} className="text-sand/60 text-sm leading-relaxed max-w-[34ch]">
+            All-in weekend package — stay, play, and group concierge handled end-to-end.
+          </motion.p>
+          <motion.a
+            variants={fadeUp}
+            href="#booking"
+            className="inline-flex items-center px-7 py-3.5 mt-2 bg-gold text-ink rounded-full text-sm font-semibold hover:bg-gold/90 transition-all active:scale-95"
+          >
+            Lock In Your 2027 Weekend
+          </motion.a>
+        </div>
+        <motion.ul variants={fadeUp} className="space-y-3">
+          <li className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4">Includes</li>
+          {includes.map((item) => (
+            <li key={item} className="flex items-center gap-3 border-b border-sand/10 pb-3 text-sm">
+              <span className="text-gold">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </motion.ul>
+      </motion.div>
+    </section>
+  );
+}
+
+/* ─── Founder / Social Proof ─── */
+function FounderNote() {
+  return (
+    <section className="px-6 py-10 md:py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="max-w-3xl mx-auto text-center space-y-4"
+      >
+        <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue block">
+          From the Founder
+        </span>
+        <p className="font-serif italic text-2xl md:text-3xl leading-snug text-balance">
+          “Built by a former Tarandowah member for golfers who wanted a better
+          weekend experience.”
+        </p>
+      </motion.div>
+    </section>
+  );
+}
+
+/* ─── Countdown to 2027 ─── */
+function useCountdown(target: Date) {
+  const [now, setNow] = (require("react") as typeof import("react")).useState(() => new Date());
+  (require("react") as typeof import("react")).useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const diff = Math.max(0, target.getTime() - now.getTime());
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff / 3600000) % 24);
+  const minutes = Math.floor((diff / 60000) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  return { days, hours, minutes, seconds };
+}
+
+function CountdownSection() {
+  // First 2027 weekend release: target May 1, 2027
+  const target = new Date("2027-05-01T12:00:00Z");
+  const { days, hours, minutes, seconds } = useCountdown(target);
+  const units = [
+    { label: "Days", value: days },
+    { label: "Hours", value: hours },
+    { label: "Minutes", value: minutes },
+    { label: "Seconds", value: seconds },
+  ];
+
+  return (
+    <section className="px-6 pb-8">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="max-w-4xl mx-auto text-center space-y-8"
+      >
+        <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue block">
+          2027 Release Countdown
+        </span>
+        <h2 className="font-serif text-3xl md:text-4xl leading-tight text-balance">
+          2027 weekends released in limited phases.
+        </h2>
+        <p className="text-foreground/60 max-w-[48ch] mx-auto">
+          Join the early access list before dates open publicly.
+        </p>
+        <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-2xl mx-auto">
+          {units.map((u) => (
+            <div
+              key={u.label}
+              className="border border-foreground/10 rounded-2xl py-6 px-2 bg-muted/30"
+            >
+              <div className="font-serif text-4xl md:text-5xl tabular-nums">
+                {String(u.value).padStart(2, "0")}
+              </div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-foreground/50 mt-2">
+                {u.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   );
 }
 

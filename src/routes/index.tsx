@@ -175,8 +175,8 @@ function CountdownSection() {
               key={u.label}
               className="border border-foreground/10 rounded-2xl py-6 px-2 bg-muted/30"
             >
-              <div className="font-serif text-4xl md:text-5xl tabular-nums">
-                {String(u.value).padStart(2, "0")}
+              <div className="font-serif text-4xl md:text-5xl tabular-nums" suppressHydrationWarning>
+                {ready ? String(u.value).padStart(2, "0") : "--"}
               </div>
               <div className="text-[10px] uppercase tracking-[0.2em] text-foreground/50 mt-2">
                 {u.label}

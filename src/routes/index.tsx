@@ -785,6 +785,66 @@ function RoadmapSection() {
   );
 }
 
+/* ─── Testimonials / Social Proof ─── */
+function TestimonialsSection() {
+  const quotes = [
+    {
+      quote: "Tarandowah is the closest thing to a true links experience I've played in Ontario. Pairing it with a proper stay is exactly what golf trips here have been missing.",
+      name: "Marcus R.",
+      role: "Group organizer, GTA",
+    },
+    {
+      quote: "We've done Bandon, Cabot, Streamsong. Having a stay-and-play at this caliber within driving distance is a no-brainer for our crew.",
+      name: "David L.",
+      role: "8-player annual trip",
+    },
+    {
+      quote: "Honest links golf, walked, with a place to decompress after. That's the whole pitch — and it works.",
+      name: "Sean P.",
+      role: "Former Tarandowah member",
+    },
+  ];
+  return (
+    <section className="px-6 py-24 md:py-32 bg-muted/20">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer} className="text-center mb-16 space-y-4"
+        >
+          <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue">
+            What Golfers Are Saying
+          </motion.span>
+          <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
+            Built for golfers, <span className="italic">by golfers.</span>
+          </motion.h2>
+        </motion.div>
+        <motion.div
+          initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}
+          variants={staggerContainer} className="grid md:grid-cols-3 gap-6"
+        >
+          {quotes.map((q) => (
+            <motion.figure
+              key={q.name} variants={fadeUp}
+              className="bg-background border border-foreground/10 rounded-2xl p-8 flex flex-col gap-6"
+            >
+              <blockquote className="font-serif italic text-lg leading-snug text-balance">
+                “{q.quote}”
+              </blockquote>
+              <figcaption className="text-xs uppercase tracking-widest text-foreground/60">
+                <div className="font-medium text-foreground">{q.name}</div>
+                <div className="mt-1">{q.role}</div>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </motion.div>
+        <p className="text-center text-[10px] uppercase tracking-widest text-foreground/40 mt-10">
+          Early interest from groups across the GTA, London, and Detroit corridor.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Final CTA ─── */
 function FinalCTA() {
   return (

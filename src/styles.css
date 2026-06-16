@@ -66,9 +66,9 @@
   --color-heather: var(--heather);
   --color-peat: var(--peat);
 
-  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 :root {
@@ -107,13 +107,13 @@
   --sidebar-ring: oklch(0.32 0.035 145);
 
   /* Gowfe Flats palette — Scottish links */
-  --sand: #F9F7F2;
-  --fescue: #C4B99A;
-  --moss: #3A4A3E;
-  --ink: #1A1918;
-  --gold: #C9A44A;
-  --heather: #7B6B8D;
-  --peat: #4A3F35;
+  --sand: #f9f7f2;
+  --fescue: #c4b99a;
+  --moss: #3a4a3e;
+  --ink: #1a1918;
+  --gold: #c9a44a;
+  --heather: #7b6b8d;
+  --peat: #4a3f35;
 }
 
 .dark {
@@ -162,7 +162,12 @@
     font-family: var(--font-sans);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
   }
 }

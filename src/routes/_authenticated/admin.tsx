@@ -35,12 +35,17 @@ function AdminPage() {
       const uid = userData.user?.id;
       if (!uid) return;
       const { data: roleRows } = await supabase
-        .from("user_roles").select("role").eq("user_id", uid).eq("role", "admin");
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", uid)
+        .eq("role", "admin");
       const admin = !!roleRows && roleRows.length > 0;
       setIsAdmin(admin);
       if (!admin) return;
       const { data, error } = await supabase
-        .from("priority_signups").select("*").order("created_at", { ascending: false });
+        .from("priority_signups")
+        .select("*")
+        .order("created_at", { ascending: false });
       if (error) setErr(error.message);
       else setRows(data as Signup[]);
     })();
@@ -57,10 +62,12 @@ function AdminPage() {
         <div className="max-w-md text-center space-y-4">
           <h1 className="font-serif text-3xl">Not authorized</h1>
           <p className="text-foreground/60 text-sm">
-            Your account is signed in but does not have admin access. Ask an existing admin
-            to grant your account the <code>admin</code> role in the <code>user_roles</code> table.
+            Your account is signed in but does not have admin access. Ask an existing admin to grant
+            your account the <code>admin</code> role in the <code>user_roles</code> table.
           </p>
-          <button onClick={signOut} className="px-5 py-2 rounded-full bg-ink text-sand text-sm">Sign out</button>
+          <button onClick={signOut} className="px-5 py-2 rounded-full bg-ink text-sand text-sm">
+            Sign out
+          </button>
         </div>
       </main>
     );
@@ -74,7 +81,12 @@ function AdminPage() {
             <h1 className="font-serif text-4xl">Priority Signups</h1>
             <p className="text-sm text-foreground/60 mt-1">{rows?.length ?? 0} total</p>
           </div>
-          <button onClick={signOut} className="px-5 py-2 rounded-full border border-foreground/15 text-sm">Sign out</button>
+          <button
+            onClick={signOut}
+            className="px-5 py-2 rounded-full border border-foreground/15 text-sm"
+          >
+            Sign out
+          </button>
         </header>
 
         {err && <p className="text-red-600 text-sm">{err}</p>}
@@ -107,11 +119,17 @@ function AdminPage() {
                       {new Date(r.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-4 py-3 font-medium">{r.name}</td>
-                    <td className="px-4 py-3"><a className="hover:underline" href={`mailto:${r.email}`}>{r.email}</a></td>
+                    <td className="px-4 py-3">
+                      <a className="hover:underline" href={`mailto:${r.email}`}>
+                        {r.email}
+                      </a>
+                    </td>
                     <td className="px-4 py-3">{r.phone ?? "—"}</td>
                     <td className="px-4 py-3">{r.group_size ?? "—"}</td>
                     <td className="px-4 py-3">{r.preferred_month ?? "—"}</td>
-                    <td className="px-4 py-3 max-w-xs truncate" title={r.notes ?? ""}>{r.notes ?? "—"}</td>
+                    <td className="px-4 py-3 max-w-xs truncate" title={r.notes ?? ""}>
+                      {r.notes ?? "—"}
+                    </td>
                   </tr>
                 ))}
               </tbody>

@@ -7,9 +7,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Gowfe Flats × Tarandowah | STAY HERE, PLAY THERE" },
-      { name: "description", content: "Gowfe Flats is a private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style layouts." },
+      {
+        name: "description",
+        content:
+          "Gowfe Flats is a private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style layouts.",
+      },
       { property: "og:title", content: "Gowfe Flats × Tarandowah | STAY HERE, PLAY THERE" },
-      { property: "og:description", content: "A private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style layouts." },
+      {
+        property: "og:description",
+        content:
+          "A private-style golf stay concept paired with Tarandowah Golfers Club — one of Canada's most authentic links-style layouts.",
+      },
     ],
   }),
   component: Index,
@@ -71,7 +79,10 @@ function PricingSection() {
         className="max-w-5xl mx-auto bg-ink text-sand rounded-[2rem] p-10 md:p-16 grid md:grid-cols-2 gap-10 md:gap-16 items-center"
       >
         <div className="space-y-4">
-          <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue block">
+          <motion.span
+            variants={fadeUp}
+            className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue block"
+          >
             Weekend Packages Starting at
           </motion.span>
           <motion.div variants={fadeUp} className="flex items-baseline gap-3">
@@ -90,7 +101,9 @@ function PricingSection() {
           </motion.a>
         </div>
         <motion.ul variants={fadeUp} className="space-y-3">
-          <li className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4">Includes</li>
+          <li className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4">
+            Includes
+          </li>
           {includes.map((item) => (
             <li key={item} className="flex items-center gap-3 border-b border-sand/10 pb-3 text-sm">
               <span className="text-gold">✓</span>
@@ -118,8 +131,7 @@ function FounderNote() {
           From the Founder
         </span>
         <p className="font-serif italic text-2xl md:text-3xl leading-snug text-balance">
-          “Built by a former Tarandowah member for golfers who wanted a better
-          weekend experience.”
+          “Built by a former Tarandowah member for golfers who wanted a better weekend experience.”
         </p>
       </motion.div>
     </section>
@@ -177,7 +189,10 @@ function CountdownSection() {
               key={u.label}
               className="border border-foreground/10 rounded-2xl py-6 px-2 bg-muted/30"
             >
-              <div className="font-serif text-4xl md:text-5xl tabular-nums" suppressHydrationWarning>
+              <div
+                className="font-serif text-4xl md:text-5xl tabular-nums"
+                suppressHydrationWarning
+              >
                 {ready ? String(u.value).padStart(2, "0") : "--"}
               </div>
               <div className="text-[10px] uppercase tracking-[0.2em] text-foreground/50 mt-2">
@@ -197,9 +212,15 @@ function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-background/80 backdrop-blur-md border-b border-foreground/5">
       <span className="font-serif italic text-2xl tracking-tight text-ink">Gowfe Flats</span>
       <div className="hidden md:flex gap-10 text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-        <a href="#course" className="hover:text-foreground transition-colors">The Links</a>
-        <a href="#experience" className="hover:text-foreground transition-colors">Experience</a>
-        <a href="#booking" className="hover:text-foreground transition-colors">Book</a>
+        <a href="#course" className="hover:text-foreground transition-colors">
+          The Links
+        </a>
+        <a href="#experience" className="hover:text-foreground transition-colors">
+          Experience
+        </a>
+        <a href="#booking" className="hover:text-foreground transition-colors">
+          Book
+        </a>
       </div>
       <a
         href="#booking"
@@ -225,17 +246,12 @@ function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
       <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
+        <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
           <motion.h1
             variants={fadeUp}
             className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] text-balance font-medium mb-6"
           >
-            STAY HERE,{" "}
-            <span className="italic font-normal">PLAY THERE</span>
+            STAY HERE, <span className="italic font-normal">PLAY THERE</span>
           </motion.h1>
 
           <motion.div
@@ -243,9 +259,8 @@ function HeroSection() {
             className="flex flex-col md:flex-row md:items-end justify-between gap-8"
           >
             <p className="text-lg md:text-xl text-white/80 max-w-[44ch] leading-relaxed text-pretty">
-              Gowfe Flats is a private-style golf stay concept paired with
-              Tarandowah Golfers Club — one of Canada's most authentic
-              links-style layouts.
+              Gowfe Flats is a private-style golf stay concept paired with Tarandowah Golfers Club —
+              one of Canada's most authentic links-style layouts.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -286,16 +301,25 @@ function ConceptSection() {
             variants={staggerContainer}
             className="space-y-10"
           >
-            <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue">
+            <motion.span
+              variants={fadeUp}
+              className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue"
+            >
               The Concept
             </motion.span>
-            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl lg:text-6xl text-balance leading-tight">
+            <motion.h2
+              variants={fadeUp}
+              className="font-serif text-4xl md:text-5xl lg:text-6xl text-balance leading-tight"
+            >
               A Different Kind of Links Getaway
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-lg md:text-xl max-w-[56ch] text-pretty leading-relaxed text-foreground/75">
-              Gowfe Flats is built for golfers who want more than a tee time.
-              It’s a stay-and-play experience designed around group golf trips,
-              weekend escapes, tournament-style travel, and links golf immersion.
+            <motion.p
+              variants={fadeUp}
+              className="text-lg md:text-xl max-w-[56ch] text-pretty leading-relaxed text-foreground/75"
+            >
+              Gowfe Flats is built for golfers who want more than a tee time. It’s a stay-and-play
+              experience designed around group golf trips, weekend escapes, tournament-style travel,
+              and links golf immersion.
             </motion.p>
             <motion.div variants={fadeUp} className="space-y-4">
               {[
@@ -304,15 +328,18 @@ function ConceptSection() {
                 "Tournament-style travel",
                 "Links golf immersion",
               ].map((item) => (
-                <div key={item} className="flex items-center gap-4 border-b border-foreground/5 pb-3">
+                <div
+                  key={item}
+                  className="flex items-center gap-4 border-b border-foreground/5 pb-3"
+                >
                   <span className="w-1.5 h-1.5 rounded-full bg-moss" />
                   <span className="text-sm uppercase tracking-wider font-medium">{item}</span>
                 </div>
               ))}
             </motion.div>
             <motion.p variants={fadeUp} className="text-foreground/60 leading-relaxed max-w-[52ch]">
-              Paired with Tarandowah Golfers Club, you get access to a true
-              inland links experience shaped by wind, strategy, and shot-making.
+              Paired with Tarandowah Golfers Club, you get access to a true inland links experience
+              shaped by wind, strategy, and shot-making.
             </motion.p>
           </motion.div>
 
@@ -342,14 +369,23 @@ function CourseSection() {
         >
           <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-4">
-              <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue">
+              <motion.span
+                variants={fadeUp}
+                className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue"
+              >
                 The Links
               </motion.span>
-              <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-7xl leading-none">
+              <motion.h2
+                variants={fadeUp}
+                className="font-serif text-5xl md:text-6xl lg:text-7xl leading-none"
+              >
                 Tarandowah Golfers Club
               </motion.h2>
             </div>
-            <motion.p variants={fadeUp} className="max-w-[35ch] text-sand/50 font-medium uppercase text-xs tracking-widest">
+            <motion.p
+              variants={fadeUp}
+              className="max-w-[35ch] text-sand/50 font-medium uppercase text-xs tracking-widest"
+            >
               Designed by Martin Hawtree. Pure golf requiring courage, skill, and strategy.
             </motion.p>
           </div>
@@ -366,7 +402,9 @@ function CourseSection() {
               { label: "Location", value: "Springfield, ON" },
             ].map((stat) => (
               <div key={stat.label} className="p-6 md:p-8 flex flex-col gap-2">
-                <span className="text-[10px] uppercase tracking-widest text-sand/40">{stat.label}</span>
+                <span className="text-[10px] uppercase tracking-widest text-sand/40">
+                  {stat.label}
+                </span>
                 <span className="text-2xl md:text-3xl font-medium">{stat.value}</span>
               </div>
             ))}
@@ -384,7 +422,9 @@ function CourseSection() {
               <p className="font-serif italic text-2xl mb-4 leading-snug">
                 “Pure golf requiring courage, skill, and strategy.”
               </p>
-              <p className="text-[10px] uppercase tracking-widest text-sand/40">Official Course Identity</p>
+              <p className="text-[10px] uppercase tracking-widest text-sand/40">
+                Official Course Identity
+              </p>
             </div>
             <img
               src="/images/fescue-bunker.jpg"
@@ -409,7 +449,10 @@ function CourseSection() {
                 desc: "Consistently ranked among the top public links in Canada for its architectural purity.",
               },
             ].map((feature) => (
-              <div key={feature.title} className="p-8 border border-sand/10 rounded-lg hover:bg-white/3 transition-colors">
+              <div
+                key={feature.title}
+                className="p-8 border border-sand/10 rounded-lg hover:bg-white/3 transition-colors"
+              >
                 <h3 className="font-serif text-2xl italic mb-4">{feature.title}</h3>
                 <p className="text-sm text-sand/55 leading-relaxed">{feature.desc}</p>
               </div>
@@ -437,19 +480,27 @@ function CombinationSection() {
             <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl leading-tight">
               Links + Stay Designed as One Experience
             </motion.h2>
-            <motion.p variants={fadeUp} className="max-w-[48ch] text-pretty text-foreground/65 leading-relaxed text-lg">
-              Most golf trips feel disconnected — you book tee times, then
-              figure out everything else. Gowfe Flats + Tarandowah is different.
+            <motion.p
+              variants={fadeUp}
+              className="max-w-[48ch] text-pretty text-foreground/65 leading-relaxed text-lg"
+            >
+              Most golf trips feel disconnected — you book tee times, then figure out everything
+              else. Gowfe Flats + Tarandowah is different.
             </motion.p>
             <motion.div variants={fadeUp} className="space-y-4">
-              <p className="text-sm uppercase tracking-widest font-medium text-foreground/80">We design the full experience:</p>
+              <p className="text-sm uppercase tracking-widest font-medium text-foreground/80">
+                We design the full experience:
+              </p>
               {[
                 "Accommodation → walking distance / short drive access",
                 "Tee times secured in advance",
                 "Group-ready layouts for 4–8 golfers",
                 "Built for weekend rhythm (arrive → play → relax → repeat)",
               ].map((item) => (
-                <div key={item} className="flex items-center gap-3 border-b border-foreground/5 pb-3">
+                <div
+                  key={item}
+                  className="flex items-center gap-3 border-b border-foreground/5 pb-3"
+                >
                   <span className="w-1.5 h-1.5 rounded-full bg-gold" />
                   <span className="text-sm">{item}</span>
                 </div>
@@ -518,7 +569,10 @@ function ExperienceFlowSection() {
           variants={staggerContainer}
           className="text-center mb-16"
         >
-          <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4 block">
+          <motion.span
+            variants={fadeUp}
+            className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4 block"
+          >
             The Weekend Rhythm
           </motion.span>
           <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
@@ -542,9 +596,7 @@ function ExperienceFlowSection() {
               >
                 <div
                   className={`size-11 rounded-full flex items-center justify-center mb-8 relative z-10 ${
-                    i === 1
-                      ? "bg-ink text-sand"
-                      : "bg-background border border-foreground/15"
+                    i === 1 ? "bg-ink text-sand" : "bg-background border border-foreground/15"
                   }`}
                 >
                   <span className="font-mono text-xs">{day.num}</span>
@@ -592,7 +644,10 @@ function AudienceSection() {
                     "Golf culture travelers",
                     "Corporate golf retreats",
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 border-l-2 border-moss/20 pl-4 py-1">
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 border-l-2 border-moss/20 pl-4 py-1"
+                    >
                       <span>{item}</span>
                     </li>
                   ))}
@@ -608,7 +663,10 @@ function AudienceSection() {
                     "Rushed 9-hole players",
                     "Non-golf-focused stays",
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 border-l-2 border-fescue/20 pl-4 py-1">
+                    <li
+                      key={item}
+                      className="flex items-center gap-3 border-l-2 border-fescue/20 pl-4 py-1"
+                    >
                       <span>{item}</span>
                     </li>
                   ))}
@@ -673,7 +731,10 @@ function HighlightsSection() {
           variants={staggerContainer}
           className="text-center mb-16"
         >
-          <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4 block">
+          <motion.span
+            variants={fadeUp}
+            className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4 block"
+          >
             Links Highlights
           </motion.span>
           <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
@@ -707,9 +768,24 @@ function HighlightsSection() {
 /* ─── Roadmap ─── */
 function RoadmapSection() {
   const phases = [
-    { year: "2026", title: "Concept + Early Interest", desc: "Architecture finalization and early interest list registration opens for priority access.", active: true },
-    { year: "2027", title: "Soft Launch Weekends", desc: "Limited weekend access for founding members and select small groups (4–8 players).", active: true },
-    { year: "2028", title: "Full 3-Unit Rollout", desc: "Complete 3-unit opening with daily availability and full Tarandowah immersion packages.", active: false },
+    {
+      year: "2026",
+      title: "Concept + Early Interest",
+      desc: "Architecture finalization and early interest list registration opens for priority access.",
+      active: true,
+    },
+    {
+      year: "2027",
+      title: "Soft Launch Weekends",
+      desc: "Limited weekend access for founding members and select small groups (4–8 players).",
+      active: true,
+    },
+    {
+      year: "2028",
+      title: "Full 3-Unit Rollout",
+      desc: "Complete 3-unit opening with daily availability and full Tarandowah immersion packages.",
+      active: false,
+    },
   ];
 
   return (
@@ -722,7 +798,10 @@ function RoadmapSection() {
           variants={staggerContainer}
           className="text-center mb-20 space-y-4"
         >
-          <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue">
+          <motion.span
+            variants={fadeUp}
+            className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue"
+          >
             Phase Launch
           </motion.span>
           <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
@@ -745,9 +824,7 @@ function RoadmapSection() {
               >
                 <div
                   className={`hidden md:flex absolute left-0 top-1.5 size-5 rounded-full items-center justify-center ${
-                    phase.active
-                      ? "bg-background border border-foreground/20"
-                      : "bg-moss"
+                    phase.active ? "bg-background border border-foreground/20" : "bg-moss"
                   }`}
                 >
                   {phase.active && <div className="w-1.5 h-1.5 rounded-full bg-foreground/40" />}
@@ -789,17 +866,20 @@ function RoadmapSection() {
 function TestimonialsSection() {
   const quotes = [
     {
-      quote: "Tarandowah is the closest thing to a true links experience I've played in Ontario. Pairing it with a proper stay is exactly what golf trips here have been missing.",
+      quote:
+        "Tarandowah is the closest thing to a true links experience I've played in Ontario. Pairing it with a proper stay is exactly what golf trips here have been missing.",
       name: "Marcus R.",
       role: "Group organizer, GTA",
     },
     {
-      quote: "We've done Bandon, Cabot, Streamsong. Having a stay-and-play at this caliber within driving distance is a no-brainer for our crew.",
+      quote:
+        "We've done Bandon, Cabot, Streamsong. Having a stay-and-play at this caliber within driving distance is a no-brainer for our crew.",
       name: "David L.",
       role: "8-player annual trip",
     },
     {
-      quote: "Honest links golf, walked, with a place to decompress after. That's the whole pitch — and it works.",
+      quote:
+        "Honest links golf, walked, with a place to decompress after. That's the whole pitch — and it works.",
       name: "Sean P.",
       role: "Former Tarandowah member",
     },
@@ -808,10 +888,16 @@ function TestimonialsSection() {
     <section className="px-6 py-24 md:py-32 bg-muted/20">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer} className="text-center mb-16 space-y-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center mb-16 space-y-4"
         >
-          <motion.span variants={fadeUp} className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue">
+          <motion.span
+            variants={fadeUp}
+            className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue"
+          >
             What Golfers Are Saying
           </motion.span>
           <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
@@ -819,12 +905,16 @@ function TestimonialsSection() {
           </motion.h2>
         </motion.div>
         <motion.div
-          initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }}
-          variants={staggerContainer} className="grid md:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={staggerContainer}
+          className="grid md:grid-cols-3 gap-6"
         >
           {quotes.map((q) => (
             <motion.figure
-              key={q.name} variants={fadeUp}
+              key={q.name}
+              variants={fadeUp}
               className="bg-background border border-foreground/10 rounded-2xl p-8 flex flex-col gap-6"
             >
               <blockquote className="font-serif italic text-lg leading-snug text-balance">
@@ -857,15 +947,24 @@ function FinalCTA() {
         className="max-w-5xl mx-auto bg-moss text-sand rounded-[2.5rem] p-12 md:p-24 text-center overflow-hidden relative"
       >
         <div className="relative z-10 space-y-8">
-          <motion.span variants={fadeUp} className="uppercase tracking-[0.3em] text-[10px] opacity-50 block">
+          <motion.span
+            variants={fadeUp}
+            className="uppercase tracking-[0.3em] text-[10px] opacity-50 block"
+          >
             Opening Summer 2027
           </motion.span>
-          <motion.h2 variants={fadeUp} className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight">
+          <motion.h2
+            variants={fadeUp}
+            className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight"
+          >
             Lock In Your <span className="italic font-normal">2027 Golf Weekend.</span>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sand/60 max-w-xl mx-auto text-lg leading-relaxed text-pretty">
-            Join the priority list and receive first access to released
-            weekends. Limited dates. Small groups only.
+          <motion.p
+            variants={fadeUp}
+            className="text-sand/60 max-w-xl mx-auto text-lg leading-relaxed text-pretty"
+          >
+            Join the priority list and receive first access to released weekends. Limited dates.
+            Small groups only.
           </motion.p>
           <motion.div variants={fadeUp} className="max-w-xl mx-auto pt-6">
             <PrioritySignupForm />
@@ -890,17 +989,28 @@ function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-16">
             <div className="space-y-5">
-              <span className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium">Navigate</span>
+              <span className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium">
+                Navigate
+              </span>
               <nav className="flex flex-col gap-3 text-sm text-foreground/50">
-                <a href="#course" className="hover:text-foreground transition-colors">The Links</a>
-                <a href="#experience" className="hover:text-foreground transition-colors">The Experience</a>
-                <a href="#booking" className="hover:text-foreground transition-colors">Bookings</a>
+                <a href="#course" className="hover:text-foreground transition-colors">
+                  The Links
+                </a>
+                <a href="#experience" className="hover:text-foreground transition-colors">
+                  The Experience
+                </a>
+                <a href="#booking" className="hover:text-foreground transition-colors">
+                  Bookings
+                </a>
               </nav>
             </div>
             <div className="space-y-5">
-              <span className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium">Contact</span>
+              <span className="text-[10px] uppercase tracking-widest text-foreground/70 font-medium">
+                Contact
+              </span>
               <p className="text-sm text-foreground/50 leading-relaxed">
-                Springfield, Ontario<br />
+                Springfield, Ontario
+                <br />
                 info@gowfeflats.ca
               </p>
             </div>

@@ -4,10 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
-    meta: [
-      { title: "Sign in | Gowfe Flats Admin" },
-      { name: "robots", content: "noindex" },
-    ],
+    meta: [{ title: "Sign in | Gowfe Flats Admin" }, { name: "robots", content: "noindex" }],
   }),
   component: AuthPage,
 });
@@ -54,33 +51,53 @@ function AuthPage() {
     <main className="min-h-screen flex items-center justify-center bg-background px-6">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center space-y-2">
-          <Link to="/" className="font-serif italic text-3xl text-ink">Gowfe Flats</Link>
-          <h1 className="font-serif text-2xl">{mode === "signin" ? "Admin Sign In" : "Create Admin Account"}</h1>
+          <Link to="/" className="font-serif italic text-3xl text-ink">
+            Gowfe Flats
+          </Link>
+          <h1 className="font-serif text-2xl">
+            {mode === "signin" ? "Admin Sign In" : "Create Admin Account"}
+          </h1>
         </div>
-        <form onSubmit={onSubmit} className="space-y-4 bg-muted/30 p-8 rounded-2xl border border-foreground/10">
+        <form
+          onSubmit={onSubmit}
+          className="space-y-4 bg-muted/30 p-8 rounded-2xl border border-foreground/10"
+        >
           <div>
-            <label className="text-[10px] uppercase tracking-widest text-foreground/60">Email</label>
+            <label className="text-[10px] uppercase tracking-widest text-foreground/60">
+              Email
+            </label>
             <input
-              type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="mt-1 w-full px-4 py-3 rounded-lg border border-foreground/15 bg-background"
             />
           </div>
           <div>
-            <label className="text-[10px] uppercase tracking-widest text-foreground/60">Password</label>
+            <label className="text-[10px] uppercase tracking-widest text-foreground/60">
+              Password
+            </label>
             <input
-              type="password" required minLength={6} value={password} onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              required
+              minLength={6}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="mt-1 w-full px-4 py-3 rounded-lg border border-foreground/15 bg-background"
             />
           </div>
           {err && <p className="text-sm text-red-600">{err}</p>}
           <button
-            type="submit" disabled={loading}
+            type="submit"
+            disabled={loading}
             className="w-full px-6 py-3 bg-ink text-sand rounded-full text-sm font-medium disabled:opacity-50"
           >
             {loading ? "Please wait…" : mode === "signin" ? "Sign In" : "Sign Up"}
           </button>
           <button
-            type="button" onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
+            type="button"
+            onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
             className="w-full text-xs text-foreground/60 hover:text-foreground"
           >
             {mode === "signin" ? "Need an account? Sign up" : "Already have an account? Sign in"}

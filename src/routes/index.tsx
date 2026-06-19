@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { PrioritySignupForm } from "@/components/PrioritySignupForm";
+import hole12Asset from "@/assets/hole-12.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -237,45 +238,73 @@ function HeroSection() {
   return (
     <header className="relative h-[100dvh] flex flex-col justify-end overflow-hidden">
       <img
-        src="/images/hero-fairway.jpg"
-        alt="Aerial view of Tarandowah links fairways at golden hour"
+        src={hole12Asset.url}
+        alt="Sunset over Tarandowah's hole 12 with whisky on the rail"
         className="absolute inset-0 w-full h-full object-cover"
         width={1920}
         height={1080}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
       <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
+          <motion.p
+            variants={fadeUp}
+            className="text-sm md:text-base uppercase tracking-[0.25em] text-white/70 mb-4"
+          >
+            2027 Tarandowah Golf Getaway
+          </motion.p>
+
           <motion.h1
             variants={fadeUp}
             className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] text-balance font-medium mb-6"
           >
-            STAY HERE, <span className="italic font-normal">PLAY THERE</span>
+            Escape. Golf. Repeat.
           </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+            className="text-lg md:text-xl text-white/80 max-w-[50ch] leading-relaxed text-pretty mb-6"
+          >
+            Bring your foursome—or your full group of eight—for an unforgettable golf weekend just minutes from Tarandowah Golfers Club.
+          </motion.p>
+
+          <motion.ul
+            variants={fadeUp}
+            className="space-y-2 text-white/80 text-base md:text-lg mb-8"
+          >
+            <li className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+              Private Gowfe Flats accommodations
+            </li>
+            <li className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+              Three rounds of golf
+            </li>
+            <li className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+              Weekend dates available for 2027
+            </li>
+            <li className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+              No deposit required until February 2027
+            </li>
+          </motion.ul>
 
           <motion.div
             variants={fadeUp}
             className="flex flex-col md:flex-row md:items-end justify-between gap-8"
           >
-            <p className="text-lg md:text-xl text-white/80 max-w-[44ch] leading-relaxed text-pretty">
-              Gowfe Flats is a private-style golf stay concept paired with Tarandowah Golfers Club —
-              one of Canada's most authentic links-style layouts.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#booking"
-                className="inline-flex items-center px-7 py-3.5 bg-white text-ink rounded-full text-sm font-medium hover:bg-white/90 transition-all active:scale-95"
-              >
-                Explore Stays & Packages
-              </a>
-              <a
-                href="#course"
-                className="inline-flex items-center px-6 py-3.5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full text-sm font-medium hover:bg-white/20 transition-all"
-              >
-                View Tarandowah Golfers Club
-              </a>
+            <div>
+              <p className="text-2xl md:text-3xl text-white font-medium mb-1">From $599 <span className="text-lg text-white/60 font-normal">per golfer.</span></p>
+              <p className="text-base text-white/60">Reserve your preferred weekend before they're gone.</p>
             </div>
+            <a
+              href="#booking"
+              className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white rounded-full text-base font-semibold hover:bg-emerald-400 transition-all active:scale-95 shadow-lg shadow-emerald-900/30"
+            >
+              RESERVE MY 2027 WEEKEND
+            </a>
           </motion.div>
         </motion.div>
       </div>

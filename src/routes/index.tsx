@@ -45,7 +45,7 @@ function Index() {
     <main className="bg-background text-foreground font-sans">
       <Navigation />
       <HeroSection />
-      <PricingSection />
+      <WhatsIncludedSection />
       <FounderNote />
       <ConceptSection />
       <CourseSection />

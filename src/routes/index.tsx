@@ -45,7 +45,7 @@ function Index() {
     <main className="bg-background text-foreground font-sans">
       <Navigation />
       <HeroSection />
-      <PricingSection />
+      <WhatsIncludedSection />
       <FounderNote />
       <ConceptSection />
       <CourseSection />
@@ -62,13 +62,15 @@ function Index() {
   );
 }
 
-/* ─── Pricing (high in the page so cost is immediate) ─── */
-function PricingSection() {
+/* ─── What's Included ─── */
+function WhatsIncludedSection() {
   const includes = [
-    "Luxury accommodations",
-    "Three rounds of golf",
-    "Group concierge support",
-    "Designed for 4–8 players",
+    "Private Gowfe Flats accommodations",
+    "Comfortable sleeping arrangements for 4–8 golfers",
+    "Three rounds of golf at Tarandowah",
+    "Prime weekend scheduling",
+    "Easy group planning with one reservation",
+    "Early access to 2027 availability",
   ];
   return (
     <section id="pricing" className="px-6 pt-20 md:pt-28 pb-6">
@@ -77,41 +79,52 @@ function PricingSection() {
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={staggerContainer}
-        className="max-w-5xl mx-auto bg-ink text-sand rounded-[2rem] p-10 md:p-16 grid md:grid-cols-2 gap-10 md:gap-16 items-center"
+        className="max-w-5xl mx-auto"
       >
-        <div className="space-y-4">
-          <motion.span
+        <div className="text-center mb-12 md:mb-16">
+          <motion.h2
             variants={fadeUp}
-            className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue block"
+            className="font-serif text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05] text-balance font-medium mb-4"
           >
-            Weekend Packages Starting at
-          </motion.span>
-          <motion.div variants={fadeUp} className="flex items-baseline gap-3">
-            <span className="font-serif text-6xl md:text-7xl leading-none">$499</span>
-            <span className="text-sm text-sand/60 uppercase tracking-widest">per golfer</span>
-          </motion.div>
-          <motion.p variants={fadeUp} className="text-sand/60 text-sm leading-relaxed max-w-[34ch]">
-            All-in weekend package — stay, play, and group concierge handled end-to-end.
+            Everything Your Group Needs—<span className="italic font-normal">Already Included</span>
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-lg md:text-xl text-muted max-w-[50ch] mx-auto leading-relaxed">
+            When you arrive, all that's left to do is enjoy the weekend.
           </motion.p>
-          <motion.a
-            variants={fadeUp}
-            href="#booking"
-            className="inline-flex items-center px-7 py-3.5 mt-2 bg-gold text-ink rounded-full text-sm font-semibold hover:bg-gold/90 transition-all active:scale-95"
-          >
-            Lock In Your 2027 Weekend
-          </motion.a>
         </div>
-        <motion.ul variants={fadeUp} className="space-y-3">
-          <li className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4">
-            Includes
-          </li>
-          {includes.map((item) => (
-            <li key={item} className="flex items-center gap-3 border-b border-sand/10 pb-3 text-sm">
-              <span className="text-gold">✓</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </motion.ul>
+
+        <motion.div
+          variants={fadeUp}
+          className="bg-ink text-sand rounded-[2rem] p-10 md:p-16 grid md:grid-cols-2 gap-10 md:gap-16"
+        >
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-6">
+              Your package includes:
+            </p>
+            <ul className="space-y-4">
+              {includes.map((item) => (
+                <li key={item} className="flex items-center gap-3 text-base md:text-lg">
+                  <span className="text-gold flex-shrink-0">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col justify-center gap-6">
+            <div className="space-y-3">
+              <p className="text-xl md:text-2xl text-sand font-medium">No hidden fees.</p>
+              <p className="text-xl md:text-2xl text-sand font-medium">No complicated planning.</p>
+              <p className="text-xl md:text-2xl text-sand font-medium">No coordinating multiple bookings.</p>
+            </div>
+            <p className="text-2xl md:text-3xl text-white font-serif">One reservation. One incredible golf trip.</p>
+            <a
+              href="#booking"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gold text-ink rounded-full text-base font-semibold hover:bg-gold/90 transition-all active:scale-95 w-fit"
+            >
+              CHECK AVAILABLE WEEKENDS
+            </a>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );

@@ -51,12 +51,11 @@ function Index() {
       <CourseSection />
       <CombinationSection />
       <ExperienceFlowSection />
-      <AudienceSection />
-      <HighlightsSection />
+      <WhyGroupsSection />
+      <UrgencySection />
       <TestimonialsSection />
-      <RoadmapSection />
-      <CountdownSection />
-      <FinalCTA />
+      <FAQSection />
+      <FinalCloseSection />
       <Footer />
     </main>
   );

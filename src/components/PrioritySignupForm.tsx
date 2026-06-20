@@ -38,7 +38,8 @@ export function PrioritySignupForm() {
       notes: notes.trim().slice(0, 1000) || null,
     });
     if (error) {
-      setErr(error.message);
+      console.error("[PrioritySignupForm] Insert error:", error.message);
+      setErr("Something went wrong. Please try again.");
       setStatus("error");
       return;
     }

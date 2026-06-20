@@ -151,73 +151,6 @@ function FounderNote() {
   );
 }
 
-/* ─── Countdown to 2027 ─── */
-function useCountdown(target: Date) {
-  const [now, setNow] = useState<Date | null>(null);
-  useEffect(() => {
-    setNow(new Date());
-    const id = setInterval(() => setNow(new Date()), 1000);
-    return () => clearInterval(id);
-  }, []);
-  const diff = now ? Math.max(0, target.getTime() - now.getTime()) : 0;
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff / 3600000) % 24);
-  const minutes = Math.floor((diff / 60000) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-  return { days, hours, minutes, seconds, ready: now !== null };
-}
-
-function CountdownSection() {
-  // First 2027 weekend release: target May 1, 2027
-  const target = new Date("2027-05-01T12:00:00Z");
-  const { days, hours, minutes, seconds, ready } = useCountdown(target);
-  const units = [
-    { label: "Days", value: days },
-    { label: "Hours", value: hours },
-    { label: "Minutes", value: minutes },
-    { label: "Seconds", value: seconds },
-  ];
-
-  return (
-    <section className="px-6 pb-8">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="max-w-4xl mx-auto text-center space-y-8"
-      >
-        <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue block">
-          2027 Release Countdown
-        </span>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight text-balance">
-          2027 weekends released in limited phases.
-        </h2>
-        <p className="text-foreground/60 max-w-[48ch] mx-auto">
-          Join the early access list before dates open publicly.
-        </p>
-        <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-2xl mx-auto">
-          {units.map((u) => (
-            <div
-              key={u.label}
-              className="border border-foreground/10 rounded-2xl py-6 px-2 bg-muted/30"
-            >
-              <div
-                className="font-serif text-4xl md:text-5xl tabular-nums"
-                suppressHydrationWarning
-              >
-                {ready ? String(u.value).padStart(2, "0") : "--"}
-              </div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-foreground/50 mt-2">
-                {u.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-    </section>
-  );
-}
 
 /* ─── Navigation ─── */
 function Navigation() {
@@ -656,179 +589,8 @@ function ExperienceFlowSection() {
   );
 }
 
-/* ─── Who It's For ─── */
-function AudienceSection() {
-  return (
-    <section className="py-24 md:py-40 px-6">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="grid lg:grid-cols-2 gap-24"
-        >
-          <div className="space-y-10">
-            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
-              Built for Serious Links Trips
-            </motion.h2>
-            <div className="space-y-8">
-              <motion.div variants={fadeUp}>
-                <span className="text-[10px] font-medium uppercase tracking-widest text-moss block mb-5">
-                  Perfect For
-                </span>
-                <ul className="space-y-3 text-sm">
-                  {[
-                    "Groups of friends (4–8 golfers)",
-                    "Golf trips from Toronto / GTA / London corridor",
-                    "Weekend competition groups",
-                    "Golf culture travelers",
-                    "Corporate golf retreats",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 border-l-2 border-moss/20 pl-4 py-1"
-                    >
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-              <motion.div variants={fadeUp}>
-                <span className="text-[10px] font-medium uppercase tracking-widest text-fescue block mb-5">
-                  Not Ideal For
-                </span>
-                <ul className="space-y-3 text-sm text-fescue/90">
-                  {[
-                    "Casual resort tourists",
-                    "Rushed 9-hole players",
-                    "Non-golf-focused stays",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 border-l-2 border-fescue/20 pl-4 py-1"
-                    >
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
-          </div>
-
-          <motion.div
-            variants={fadeUp}
-            className="bg-background p-10 md:p-14 border border-foreground/5 rounded-2xl"
-          >
-            <h3 className="font-serif text-3xl mb-8">Why Golfers Return</h3>
-            <div className="space-y-8">
-              {[
-                {
-                  title: "Shifting Conditions",
-                  desc: "Wind-shaped strategy course that never plays the same way twice. Every round is a new puzzle.",
-                },
-                {
-                  title: "Authentic Surfaces",
-                  desc: "Fast, firm playing conditions and links-style fescue rough. The ball runs, bounces, and tests every club.",
-                },
-                {
-                  title: "Traditional Walk",
-                  desc: "A walkable experience that respects the heritage of the game. No carts required — just the wind and your thoughts.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-4">
-                  <div className="shrink-0 w-2 h-2 mt-2 rounded-full bg-moss/25" />
-                  <div>
-                    <p className="font-medium mb-1.5">{item.title}</p>
-                    <p className="text-sm text-foreground/55 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Course Highlights ─── */
-function HighlightsSection() {
-  const highlights = [
-    "Wind-shaped strategy course (never plays the same twice)",
-    "Fast, firm playing conditions",
-    "Links-style bunkering and fescue rough",
-    "Walkable, traditional golf experience",
-    "Strong reputation among Ontario golfers",
-  ];
-
-  return (
-    <section className="py-24 bg-ink text-sand px-6">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="text-center mb-16"
-        >
-          <motion.span
-            variants={fadeUp}
-            className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue mb-4 block"
-          >
-            Links Highlights
-          </motion.span>
-          <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
-            Why Golfers Return to Tarandowah
-          </motion.h2>
-        </motion.div>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4"
-        >
-          {highlights.map((h, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              className="p-6 border border-sand/10 rounded-lg hover:bg-white/3 transition-colors"
-            >
-              <div className="w-2 h-2 rounded-full bg-gold/60 mb-4" />
-              <p className="text-sm leading-relaxed text-sand/80">{h}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Roadmap ─── */
-function RoadmapSection() {
-  const phases = [
-    {
-      year: "2026",
-      title: "Concept + Early Interest",
-      desc: "Architecture finalization and early interest list registration opens for priority access.",
-      active: true,
-    },
-    {
-      year: "2027",
-      title: "Soft Launch Weekends",
-      desc: "Limited weekend access for founding members and select small groups (4–8 players).",
-      active: true,
-    },
-    {
-      year: "2028",
-      title: "Full 3-Unit Rollout",
-      desc: "Complete 3-unit opening with daily availability and full Tarandowah immersion packages.",
-      active: false,
-    },
-  ];
-
+/* ─── Why Groups Return ─── */
+function WhyGroupsSection() {
   return (
     <section className="py-24 md:py-40 px-6">
       <div className="max-w-4xl mx-auto">
@@ -837,66 +599,166 @@ function RoadmapSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-20 space-y-4"
+          className="text-center space-y-10"
         >
-          <motion.span
+          <motion.h2
             variants={fadeUp}
-            className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue"
+            className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight"
           >
-            Phase Launch
-          </motion.span>
-          <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl">
-            2027 Soft Launch — Limited Weekend Access
+            Why Groups Return Year After Year
           </motion.h2>
-        </motion.div>
 
-        <div className="relative">
-          <div className="absolute left-[11px] top-0 bottom-0 w-px bg-foreground/8 hidden md:block" />
+          <motion.p
+            variants={fadeUp}
+            className="text-lg md:text-xl text-foreground/60 max-w-[50ch] mx-auto"
+          >
+            Because great golf weekends aren't just about the scorecard.
+          </motion.p>
 
-          <div className="flex flex-col gap-14">
-            {phases.map((phase, i) => (
-              <motion.div
-                key={phase.year}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
-                className="relative pl-0 md:pl-16"
-              >
+          <motion.div variants={fadeUp} className="space-y-4">
+            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue">
+              It's about:
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+              {[
+                "The first tee banter.",
+                "Post-round drinks.",
+                "Retelling impossible shots.",
+                "Finally getting the whole group together.",
+              ].map((item) => (
                 <div
-                  className={`hidden md:flex absolute left-0 top-1.5 size-5 rounded-full items-center justify-center ${
-                    phase.active ? "bg-background border border-foreground/20" : "bg-moss"
-                  }`}
+                  key={item}
+                  className="p-6 border border-foreground/10 rounded-xl text-left"
                 >
-                  {phase.active && <div className="w-1.5 h-1.5 rounded-full bg-foreground/40" />}
+                  <p className="font-serif italic text-xl">{item}</p>
                 </div>
-                <span className="text-xs font-medium text-fescue mb-1 block">{phase.year}</span>
-                <h4 className="font-medium text-xl mb-2">{phase.title}</h4>
-                <p className="text-sm text-foreground/55 max-w-md">{phase.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+              ))}
+            </div>
+          </motion.div>
 
+          <motion.div variants={fadeUp} className="space-y-3 pt-6">
+            <p className="text-xl md:text-2xl font-medium">No hotels.</p>
+            <p className="text-xl md:text-2xl font-medium">No splitting everyone up.</p>
+            <p className="text-xl md:text-2xl font-medium">No complicated planning.</p>
+          </motion.div>
+
+          <motion.p
+            variants={fadeUp}
+            className="text-xl md:text-2xl text-foreground/70 max-w-[50ch] mx-auto leading-relaxed"
+          >
+            Just golf, laughs, and a weekend you'll talk about long after the final putt drops.
+          </motion.p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Urgency ─── */
+function UrgencySection() {
+  return (
+    <section className="py-24 md:py-32 px-6 bg-ink text-sand">
+      <div className="max-w-4xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mt-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="space-y-8"
         >
-          <a
-            href="#booking"
-            className="inline-flex items-center justify-center px-8 py-4 bg-ink text-sand rounded-full text-sm font-medium tracking-wide hover:bg-ink/85 transition-all active:scale-95"
+          <motion.h2
+            variants={fadeUp}
+            className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight"
           >
-            Join Early Booking List
-          </a>
-          <a
-            href="#booking"
-            className="inline-flex items-center justify-center px-8 py-4 border border-foreground/15 rounded-full text-sm font-medium tracking-wide hover:bg-foreground/3 transition-all"
+            Prime Weekends Won't Last
+          </motion.h2>
+
+          <motion.div variants={fadeUp} className="space-y-3 max-w-xl mx-auto">
+            <p className="text-lg md:text-xl text-sand/70">
+              Spring and summer weekends are limited.
+            </p>
+            <p className="text-lg md:text-xl text-sand/70">
+              Groups are already securing preferred dates for the 2027 season.
+            </p>
+            <p className="text-lg md:text-xl text-sand/70">
+              Reserve now to get first choice before deposits officially open in February 2027.
+            </p>
+          </motion.div>
+
+          <motion.p
+            variants={fadeUp}
+            className="text-2xl md:text-3xl font-serif italic text-gold"
           >
-            Reserve Priority Weekends
-          </a>
+            Reserve early. Pay later.
+          </motion.p>
+
+          <motion.div variants={fadeUp}>
+            <a
+              href="#booking"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gold text-ink rounded-full text-base font-semibold hover:bg-gold/90 transition-all active:scale-95"
+            >
+              LOCK IN OUR DATES
+            </a>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── FAQ ─── */
+function FAQSection() {
+  const faqs = [
+    {
+      q: "Do I need to pay a deposit now?",
+      a: "No. Reserve your preferred dates now. Deposits begin in February 2027.",
+    },
+    {
+      q: "How many golfers can stay?",
+      a: "The package is designed for groups of 4–8 golfers.",
+    },
+    {
+      q: "Can we choose our weekends?",
+      a: "Yes. Availability is first come, first served.",
+    },
+    {
+      q: "What's included?",
+      a: "Accommodations plus three rounds of golf.",
+    },
+    {
+      q: "What if plans change?",
+      a: "Specific booking terms will be provided before deposits are collected.",
+    },
+  ];
+
+  return (
+    <section className="py-24 md:py-32 px-6">
+      <div className="max-w-3xl mx-auto">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="space-y-12"
+        >
+          <motion.h2
+            variants={fadeUp}
+            className="font-serif text-4xl md:text-5xl text-center"
+          >
+            Frequently Asked Questions
+          </motion.h2>
+
+          <motion.div variants={fadeUp} className="space-y-6">
+            {faqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="border-b border-foreground/10 pb-6"
+              >
+                <h3 className="font-medium text-lg mb-2">{faq.q}</h3>
+                <p className="text-foreground/60 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>
@@ -976,8 +838,8 @@ function TestimonialsSection() {
   );
 }
 
-/* ─── Final CTA ─── */
-function FinalCTA() {
+/* ─── Final Close ─── */
+function FinalCloseSection() {
   return (
     <section id="booking" className="bg-background px-6 pb-24">
       <motion.div
@@ -988,25 +850,55 @@ function FinalCTA() {
         className="max-w-5xl mx-auto bg-moss text-sand rounded-[2.5rem] p-12 md:p-24 text-center overflow-hidden relative"
       >
         <div className="relative z-10 space-y-8">
-          <motion.span
-            variants={fadeUp}
-            className="uppercase tracking-[0.3em] text-[10px] opacity-50 block"
-          >
-            Opening Summer 2027
-          </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight"
+            className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight"
           >
-            Lock In Your <span className="italic font-normal">2027 Golf Weekend.</span>
+            Your 2027 Golf Weekend Starts Here
           </motion.h2>
+
           <motion.p
             variants={fadeUp}
             className="text-sand/60 max-w-xl mx-auto text-lg leading-relaxed text-pretty"
           >
-            Join the priority list and receive first access to released weekends. Limited dates.
-            Small groups only.
+            The hardest part of organizing a golf trip is getting everyone to commit. We've already made it simple.
           </motion.p>
+
+          <motion.div variants={fadeUp} className="space-y-2">
+            <p className="text-lg flex items-center justify-center gap-2">
+              <span className="text-gold">✓</span> One package.
+            </p>
+            <p className="text-lg flex items-center justify-center gap-2">
+              <span className="text-gold">✓</span> One reservation.
+            </p>
+            <p className="text-lg flex items-center justify-center gap-2">
+              <span className="text-gold">✓</span> One unforgettable weekend.
+            </p>
+          </motion.div>
+
+          <motion.p
+            variants={fadeUp}
+            className="text-sand/60 max-w-xl mx-auto text-base leading-relaxed"
+          >
+            Choose your dates today and secure your group's spot before the best weekends disappear.
+          </motion.p>
+
+          <motion.div variants={fadeUp}>
+            <a
+              href="#booking"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gold text-ink rounded-full text-base font-semibold hover:bg-gold/90 transition-all active:scale-95"
+            >
+              RESERVE OUR 2027 WEEKEND
+            </a>
+          </motion.div>
+
+          <motion.p
+            variants={fadeUp}
+            className="text-sand/40 text-sm"
+          >
+            No deposit required until February 2027. Limited weekend availability.
+          </motion.p>
+
           <motion.div variants={fadeUp} className="max-w-xl mx-auto pt-6">
             <PrioritySignupForm />
           </motion.div>

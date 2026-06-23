@@ -943,7 +943,7 @@ function FinalCloseSection() {
             variants={fadeUp}
             className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight"
           >
-            Your 2027 Golf Weekend Starts Here
+            Reserve Your Weekend Before Public Release
           </motion.h2>
 
           <motion.p

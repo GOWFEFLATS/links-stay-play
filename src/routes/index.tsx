@@ -45,7 +45,9 @@ function Index() {
     <main className="bg-background text-foreground font-sans">
       <Navigation />
       <HeroSection />
+      <WhyWeBuiltSection />
       <WhatsIncludedSection />
+      <UnitLayoutSection />
       <FounderNote />
       <ConceptSection />
       <CourseSection />
@@ -64,12 +66,13 @@ function Index() {
 /* ─── What's Included ─── */
 function WhatsIncludedSection() {
   const includes = [
-    "Private Gowfe Flats accommodations",
-    "Comfortable sleeping arrangements for 4–8 golfers",
-    "Three rounds of golf at Tarandowah",
-    "Prime weekend scheduling",
-    "Easy group planning with one reservation",
-    "Early access to 2027 availability",
+    "2 Nights at Gowfe Flats",
+    "3 Rounds at Tarandowah Golfers Club",
+    "Shared Golf Cart",
+    "Priority Tee Times",
+    "Group Concierge",
+    "Welcome Package",
+    "Access for 4–8 Golfers",
   ];
   return (
     <section id="pricing" className="px-6 pt-20 md:pt-28 pb-6">
@@ -85,10 +88,10 @@ function WhatsIncludedSection() {
             variants={fadeUp}
             className="font-serif text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05] text-balance font-medium mb-4"
           >
-            Everything Your Group Needs—<span className="italic font-normal">Already Included</span>
+            Weekend Package <span className="italic font-normal">Includes</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-lg md:text-xl text-muted max-w-[50ch] mx-auto leading-relaxed">
-            When you arrive, all that's left to do is enjoy the weekend.
+            One reservation. Everything your group needs for the weekend.
           </motion.p>
         </div>
 
@@ -180,6 +183,12 @@ function Navigation() {
 
 /* ─── Hero ─── */
 function HeroSection() {
+  const pillars = [
+    { label: "Stay", desc: "Private flats, sleeps 4–8" },
+    { label: "Play", desc: "3 rounds at Tarandowah" },
+    { label: "Concierge", desc: "One contact, zero hassle" },
+    { label: "Small Groups", desc: "Built for foursomes & eights" },
+  ];
   return (
     <header className="relative h-[100dvh] flex flex-col justify-end overflow-hidden">
       <img
@@ -189,76 +198,156 @@ function HeroSection() {
         width={1920}
         height={1080}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/20" />
 
-      <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-24 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 px-6 md:px-12 pb-16 md:pb-20 max-w-7xl mx-auto w-full">
         <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
           <motion.p
             variants={fadeUp}
             className="text-sm md:text-base uppercase tracking-[0.25em] text-white/70 mb-4"
           >
-            2027 Tarandowah Golf Getaway
+            Introducing
           </motion.p>
 
           <motion.h1
             variants={fadeUp}
             className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.95] text-balance font-medium mb-6"
           >
-            Escape. Golf. Repeat.
+            Gowfe Flats
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
-            className="text-lg md:text-xl text-white/80 max-w-[50ch] leading-relaxed text-pretty mb-6"
+            className="text-lg md:text-xl text-white/85 max-w-[55ch] leading-relaxed text-pretty mb-10"
           >
-            Bring your foursome—or your full group of eight—for an unforgettable golf weekend just minutes from Tarandowah Golfers Club.
+            Ontario's new stay-and-play experience built exclusively for Tarandowah golfers.
           </motion.p>
-
-          <motion.ul
-            variants={fadeUp}
-            className="space-y-2 text-white/80 text-base md:text-lg mb-8"
-          >
-            <li className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-              Private Gowfe Flats accommodations
-            </li>
-            <li className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-              Three rounds of golf
-            </li>
-            <li className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-              Weekend dates available for 2027
-            </li>
-            <li className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-              No deposit required until February 2027
-            </li>
-          </motion.ul>
 
           <motion.div
             variants={fadeUp}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 max-w-3xl"
           >
-            <div>
-              <p className="text-2xl md:text-3xl text-white font-medium mb-1">From $599 <span className="text-lg text-white/60 font-normal">per golfer.</span></p>
-              <p className="text-base text-white/60">Reserve your preferred weekend before they're gone.</p>
-            </div>
+            {pillars.map((p) => (
+              <div
+                key={p.label}
+                className="border border-white/20 bg-white/5 backdrop-blur-sm rounded-xl p-4"
+              >
+                <p className="text-[10px] uppercase tracking-[0.2em] text-gold mb-1">{p.label}</p>
+                <p className="text-sm text-white/80 leading-snug">{p.desc}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row sm:items-center gap-4">
             <a
               href="#booking"
-              className="inline-flex items-center px-8 py-4 bg-emerald-500 text-white rounded-full text-base font-semibold hover:bg-emerald-400 transition-all active:scale-95 shadow-lg shadow-emerald-900/30"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gold text-ink rounded-full text-base font-semibold hover:bg-gold/90 transition-all active:scale-95 shadow-lg shadow-black/30"
             >
-              RESERVE MY 2027 WEEKEND
+              LOCK MY WEEKEND
             </a>
+            <p className="text-sm text-white/60">No deposit required until February 1, 2027.</p>
           </motion.div>
         </motion.div>
       </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 text-[10px] uppercase tracking-[0.3em] flex flex-col items-center gap-3">
-        <span>Scroll to Begin</span>
-        <div className="w-px h-10 bg-white/20" />
-      </div>
     </header>
+  );
+}
+
+/* ─── Why We Built Gowfe Flats ─── */
+function WhyWeBuiltSection() {
+  return (
+    <section className="px-6 py-20 md:py-28 bg-muted/20">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+        className="max-w-3xl mx-auto text-center space-y-6"
+      >
+        <motion.span
+          variants={fadeUp}
+          className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue block"
+        >
+          Why We Built Gowfe Flats
+        </motion.span>
+        <motion.h2
+          variants={fadeUp}
+          className="font-serif text-4xl md:text-5xl leading-tight text-balance"
+        >
+          Great golf. Limited stay-and-play.
+        </motion.h2>
+        <motion.p
+          variants={fadeUp}
+          className="text-lg md:text-xl text-foreground/70 leading-relaxed text-pretty"
+        >
+          After years playing Tarandowah, we noticed golfers had a world-class links course
+          right here in Ontario — but almost nowhere built for the weekend around it.
+        </motion.p>
+        <motion.p
+          variants={fadeUp}
+          className="text-lg md:text-xl text-foreground/70 leading-relaxed text-pretty"
+        >
+          Gowfe Flats was created to give small groups a purpose-built golf weekend experience
+          designed around links golf, friendship, competition, and great memories.
+        </motion.p>
+      </motion.div>
+    </section>
+  );
+}
+
+/* ─── Unit Layout ─── */
+function UnitLayoutSection() {
+  const features = [
+    "2 adult bunk beds",
+    "Loft with 2 single beds",
+    "Sectional seating area",
+    "Full kitchenette",
+    "Sleeps up to 8 golfers",
+    "Keeps your foursome together",
+  ];
+  return (
+    <section className="px-6 py-20 md:py-28">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+        className="max-w-6xl mx-auto"
+      >
+        <div className="text-center mb-12 space-y-4">
+          <motion.span
+            variants={fadeUp}
+            className="text-[10px] font-medium uppercase tracking-[0.2em] text-fescue block"
+          >
+            Inside the Flats
+          </motion.span>
+          <motion.h2
+            variants={fadeUp}
+            className="font-serif text-4xl md:text-5xl leading-tight"
+          >
+            One Gowfe Flats Unit
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            className="text-lg text-foreground/60 max-w-[50ch] mx-auto"
+          >
+            Designed so your whole group stays under one roof — no splitting up across hotels.
+          </motion.p>
+        </div>
+
+        <motion.div
+          variants={fadeUp}
+          className="grid md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10 rounded-2xl overflow-hidden"
+        >
+          {features.map((f) => (
+            <div key={f} className="bg-background p-6 md:p-8 flex items-center gap-4">
+              <span className="text-gold text-xl">◆</span>
+              <span className="text-base md:text-lg font-medium">{f}</span>
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
+    </section>
   );
 }
 
@@ -854,7 +943,7 @@ function FinalCloseSection() {
             variants={fadeUp}
             className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight"
           >
-            Your 2027 Golf Weekend Starts Here
+            Reserve Your Weekend Before Public Release
           </motion.h2>
 
           <motion.p
@@ -885,10 +974,10 @@ function FinalCloseSection() {
 
           <motion.div variants={fadeUp}>
             <a
-              href="#booking"
+              href="#booking-form"
               className="inline-flex items-center justify-center px-8 py-4 bg-gold text-ink rounded-full text-base font-semibold hover:bg-gold/90 transition-all active:scale-95"
             >
-              RESERVE OUR 2027 WEEKEND
+              LOCK MY WEEKEND
             </a>
           </motion.div>
 

@@ -88,10 +88,10 @@ function WhatsIncludedSection() {
             variants={fadeUp}
             className="font-serif text-4xl md:text-5xl lg:text-6xl text-ink leading-[1.05] text-balance font-medium mb-4"
           >
-            Everything Your Group Needs—<span className="italic font-normal">Already Included</span>
+            Weekend Package <span className="italic font-normal">Includes</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-lg md:text-xl text-muted max-w-[50ch] mx-auto leading-relaxed">
-            When you arrive, all that's left to do is enjoy the weekend.
+            One reservation. Everything your group needs for the weekend.
           </motion.p>
         </div>
 

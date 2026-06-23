@@ -66,12 +66,13 @@ function Index() {
 /* ─── What's Included ─── */
 function WhatsIncludedSection() {
   const includes = [
-    "Private Gowfe Flats accommodations",
-    "Comfortable sleeping arrangements for 4–8 golfers",
-    "Three rounds of golf at Tarandowah",
-    "Prime weekend scheduling",
-    "Easy group planning with one reservation",
-    "Early access to 2027 availability",
+    "2 Nights at Gowfe Flats",
+    "3 Rounds at Tarandowah Golfers Club",
+    "Shared Golf Cart",
+    "Priority Tee Times",
+    "Group Concierge",
+    "Welcome Package",
+    "Access for 4–8 Golfers",
   ];
   return (
     <section id="pricing" className="px-6 pt-20 md:pt-28 pb-6">

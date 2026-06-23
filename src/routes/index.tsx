@@ -974,10 +974,10 @@ function FinalCloseSection() {
 
           <motion.div variants={fadeUp}>
             <a
-              href="#booking"
+              href="#booking-form"
               className="inline-flex items-center justify-center px-8 py-4 bg-gold text-ink rounded-full text-base font-semibold hover:bg-gold/90 transition-all active:scale-95"
             >
-              RESERVE OUR 2027 WEEKEND
+              LOCK MY WEEKEND
             </a>
           </motion.div>
 
